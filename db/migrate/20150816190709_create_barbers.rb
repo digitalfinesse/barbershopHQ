@@ -3,9 +3,9 @@ class CreateBarbers < ActiveRecord::Migration
   def change
 
   	create_table :barbers do |t|
-  		t.text :name
+  		t.text :name 
 
-  		t.timestamp
+  		t.timestamps null: false
   	end
 
   Barbers.create :name => 'Jessie Pinkman'
