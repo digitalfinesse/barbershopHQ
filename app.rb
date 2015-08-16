@@ -15,6 +15,6 @@ class Clients < ActiveRecord::Base
 end
 
 get '/' do
-	@barbers = Barbers.all
+	@barbers = Barbers.order "created_at DESC"
 	erb :index	
 end
