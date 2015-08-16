@@ -6,7 +6,11 @@ require 'sinatra/activerecord'
 
 set :database, "sqlite3:barbershop.db"
 
-class Client < ActiveRecord::Base
+class Barbers < ActiveRecord::Base
+
+end
+
+class Clients < ActiveRecord::Base
 
 end
 
