@@ -18,3 +18,11 @@ get '/' do
 	@barbers = Barbers.order "created_at DESC"
 	erb :index	
 end
+
+get '/visit' do
+  erb :visit
+end
+
+get '/contacts' do
+  erb :contacts
+end

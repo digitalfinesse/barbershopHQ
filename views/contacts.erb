@@ -1,0 +1,21 @@
+<h2>Контакты</h2>
+<p>Вы можете написать нам в Barber Shop</p>
+
+<form action="/contacts" method="POST">
+  <div class="form-group">
+    <label>Ваше имя</label>
+    <input name="contact_name" type="text" class="form-control" placeholder="Введите ваше имя" value="<%= @contact_name %>">
+  </div>
+
+  <div class="form-group">
+    <label>Ваш e-mail</label>
+    <input name="email" type="email" class="form-control" placeholder="Введите вашу почту" value="<%= @email %>">
+  </div>
+
+  <div class="form-group">
+    <label>Ваше сообщение</label>
+    <textarea name="contact_text" class="form-control" row="20" placeholder="Введите ваше сообщение"></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Отправить</button>
+</form>
