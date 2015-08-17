@@ -30,32 +30,8 @@ end
 
 post '/visit' do
 
-	@username = params[:username]
-	@phone    = params[:phone]
-	@datetime = params[:datetime]
-	@barberopt = params[:barberopt]
-	@color = params[:color]	
-
-	hh = {  
-			:username => "Вы не ввели имя!",
-			:phone => "Вы не ввели телефон!", 
-			:datetime => "Вы не ввели дату и время!"
-		}
-
-	@error = hh.select { |key,_| params[key] == ""}.values.join(", ")
-
-	if @error != ''
-		return erb :visit
-	end
-
-	c = Clients.new
-	c.name = @username
-	c.phone = @phone
-	c.datestamp = @datetime
-	c.barber = @barberopt
-	c.color = @color
+	c = Clients.new params[:clients]
 	c.save
-
 
   	erb "<h2>Вы записаны!</h2>"
 end
