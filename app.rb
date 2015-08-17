@@ -6,11 +6,14 @@ require 'sinatra/activerecord'
 
 set :database, "sqlite3:barbershop.db"
 
-class Barbers < ActiveRecord::Base
-
+class Clients < ActiveRecord::Base
+	validate :name, presence: true
+	validate :phone, presence: true
+	validate :datestamp, presence: true
+	validate :color, presence: true
 end
 
-class Clients < ActiveRecord::Base
+class Barbers < ActiveRecord::Base
 
 end
 
