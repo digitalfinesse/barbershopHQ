@@ -32,6 +32,14 @@
 
 <h3>Выберите парикмахера:</h3>
 
+<% @barbers.each do |row| %>
+      <div class="radio">
+        <label>
+          <input type="radio" name="barberopt" value="<%= row['name'] %>"<%= @barberopt == row['name']? 'checked' : '' %>><%= row['name'] %>
+        </label>
+      </div>
+<% end %>
+
 
 
 
@@ -55,7 +63,7 @@
 </div>
 
 
-  <button type="submit" class="btn btn-primary">Отправить</button>
+  <button type="submit" class="btn btn-primary">Записаться</button>
 </form>
 
 
