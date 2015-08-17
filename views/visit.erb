@@ -16,17 +16,17 @@
 <form action="/visit" method="POST">
   <div class="form-group">
     <label>Ваше имя</label>
-    <input name="clients[name]" type="text" class="form-control" placeholder="Введите ваше имя" value="">
+    <input name="clients[name]" type="text" class="form-control" placeholder="Введите ваше имя" value="<%= @c.name %>">
   </div>
 
   <div class="form-group">
     <label>Ваш телефон</label>
-    <input name="clients[phone]" type="text" class="form-control" placeholder="Введите ваш телефон" value="">
+    <input name="clients[phone]" type="text" class="form-control" placeholder="Введите ваш телефон" value="<%= @c.phone %>">
   </div>
 
   <div class="form-group">
     <label>Время и дата записи</label>
-    <input name="clients[datestamp]" id="datetimepicker" type="text" class="form-control" placeholder="Введите удобное время для записи" value="">
+    <input name="clients[datestamp]" id="datetimepicker" type="text" class="form-control" placeholder="Введите удобное время для записи" value="<%= @c.datestamp %>">
 
   </div>
 
