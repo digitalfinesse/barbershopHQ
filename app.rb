@@ -20,9 +20,23 @@ get '/' do
 end
 
 get '/visit' do
-  erb :visit
+
+	@username = params[:username]
+	@phone    = params[:phone]
+	@datetime = params[:datetime]
+	@barberopt = params[:barberopt]
+	@color = params[:color]	
+
+	c = Clients.new
+	c.name = @username
+	c.phone = @phone
+	c.datestamp = @datetime
+	c.barber = @barberopt
+	c.color = @color
+
+  	erb :visit
 end
 
 get '/contacts' do
-  erb :contacts
+  	erb :contacts
 end
