@@ -59,8 +59,14 @@ post '/contacts' do
 end
 
 get '/bookings' do
-	@clients = Clients.all 
+	@clients = Clients.order('created_at DESC') 
 
   	erb :bookings
+end
+
+get '/client/:id' do
+	@client = Clients.find params[:id]
+
+	erb :client
 end
 
