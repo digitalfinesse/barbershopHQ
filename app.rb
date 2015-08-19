@@ -29,7 +29,7 @@ end
 
 get '/barber/:id' do
 	@barber = Barbers.find params[:id]
-	
+
 	erb :barber
 end
 
@@ -57,3 +57,10 @@ end
 post '/contacts' do
   erb :contacts
 end
+
+get '/bookings' do
+	@clients = Clients.all 
+
+  	erb :bookings
+end
+
