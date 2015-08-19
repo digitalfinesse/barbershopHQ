@@ -2,7 +2,7 @@
 <ul>
 <% @barbers.each do |barber| %>
 	<li>
-		<h4><%= barber.name %></h4>
+		<h4><a href="/barber/<%= barber.id %>"><%= barber.name %></a></h4>
 	</li>
 
 <% end %>

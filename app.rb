@@ -17,6 +17,7 @@ class Barbers < ActiveRecord::Base
 
 end
 
+# создаём глобальную переменную для работы с БД
 before do
 	@barbers = Barbers.all
 end
@@ -24,6 +25,10 @@ end
 get '/' do
 	@barbers = Barbers.order "created_at DESC"
 	erb :index	
+end
+
+get '/barber/:id' do
+	erb :barber
 end
 
 get '/visit' do
@@ -45,4 +50,8 @@ end
 
 get '/contacts' do
   	erb :contacts
+end
+
+post '/contacts' do
+  erb :contacts
 end
